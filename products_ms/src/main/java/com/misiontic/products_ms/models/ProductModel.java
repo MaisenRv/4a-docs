@@ -6,7 +6,6 @@ import org.springframework.data.annotation.Id;
 
 public class ProductModel {
     @Id
-    private Integer id;
     private String nombre;
     private String descripcion;
     private Integer cantidad;
@@ -14,28 +13,13 @@ public class ProductModel {
     private String tipo;
     private Date fechaCreacion;
 
-    ProductModel(Integer id,String nombre,String descripcion,Integer cantidad,float talla,String tipo,Date fechaCreacion){
-        this.id = id;
+    ProductModel(String nombre,String descripcion,Integer cantidad,float talla,String tipo,Date fechaCreacion){
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.cantidad = cantidad;
         this.talla = talla;
         this.tipo = tipo;
         this.fechaCreacion = fechaCreacion;
-    }
-
-    /**
-     * @return Integer return the id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     /**
