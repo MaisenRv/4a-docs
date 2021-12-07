@@ -25,5 +25,15 @@ class ProductAPI extends RESTDataSource{
         return await this.get(`/products/`);
     }
 
+    async createTransaction(trasaction){
+        trasaction = new Object(JSON.parse(JSON.stringify(trasaction)));
+        return await this.post('/transaction',trasaction)
+    }
+
+    async transactionById(transactionId){
+        return await this.get(`/transaction/${transactionId}`);
+    }
+
+
 }
 module.exports = ProductAPI;
