@@ -7,22 +7,24 @@ import org.springframework.data.annotation.Id;
 public class TransactionModel {
     @Id
     private String id;
+    private String usuarioOrigen;
+    private String usuarioDestino;
     private String tipoTransaccion;
     private String producto;
     private Integer cantidad;
     private String total;
     private Date fecha;
 
-    public TransactionModel(String id,String tipoTransaccion,String producto,Integer cantidad,String total,Date fecha){
+    public TransactionModel(String id,String usuarioOrigen,String usuarioDestino,String tipoTransaccion,String producto,Integer cantidad,String total,Date fecha){
         this.id = id;
+        this.usuarioOrigen = usuarioOrigen;
+        this.usuarioDestino = usuarioDestino;
         this.tipoTransaccion = tipoTransaccion;
         this.producto = producto;
         this.cantidad = cantidad;
         this.total = total;
         this.fecha = fecha;
     }
-
-    
 
     /**
      * @return String return the id
@@ -36,6 +38,34 @@ public class TransactionModel {
      */
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * @return String return the usuarioOrigen
+     */
+    public String getUsuarioOrigen() {
+        return usuarioOrigen;
+    }
+
+    /**
+     * @param usuarioOrigen the usuarioOrigen to set
+     */
+    public void setUsuarioOrigen(String usuarioOrigen) {
+        this.usuarioOrigen = usuarioOrigen;
+    }
+
+    /**
+     * @return String return the usuarioDestino
+     */
+    public String getUsuarioDestino() {
+        return usuarioDestino;
+    }
+
+    /**
+     * @param usuarioDestino the usuarioDestino to set
+     */
+    public void setUsuarioDestino(String usuarioDestino) {
+        this.usuarioDestino = usuarioDestino;
     }
 
     /**
