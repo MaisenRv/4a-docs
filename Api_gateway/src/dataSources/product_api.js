@@ -34,6 +34,5 @@ class ProductAPI extends RESTDataSource{
         return await this.get(`/transaction/${transactionId}`);
     }
 
-
 }
 module.exports = ProductAPI;
