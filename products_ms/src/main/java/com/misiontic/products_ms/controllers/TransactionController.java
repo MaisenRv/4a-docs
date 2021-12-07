@@ -37,12 +37,12 @@ public class TransactionController {
             throw new InsufficientProductsException("No se dispone con suficientes productos");
         }
 
-        if (transaction.getTipoTransaccion() == "Venta") {
+        if (transaction.getTipoTransaccion().equalsIgnoreCase("Venta")) {
             product.setCantidad(product.getCantidad() - transaction.getCantidad());
-            return transactionRepository.save(transaction);
+        }else if(transaction.getTipoTransaccion().equalsIgnoreCase("Compra")){
+            product.setCantidad(product.getCantidad() + transaction.getCantidad());
         }
-
-        product.setCantidad(product.getCantidad() + transaction.getCantidad());
+        productRepository.save(product);
         return transactionRepository.save(transaction);
     }
 
