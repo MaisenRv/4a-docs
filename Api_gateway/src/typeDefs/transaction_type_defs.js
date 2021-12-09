@@ -28,7 +28,7 @@ extend type Query{
 }
 
 extend type Mutation{
-    createTransaction(trasaction: TransactionInput!): Transaction
+    createTransaction(transaction: TransactionInput!): Transaction
 }
 
 `;

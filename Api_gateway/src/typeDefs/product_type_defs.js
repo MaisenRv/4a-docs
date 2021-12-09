@@ -8,7 +8,7 @@ type Product {
     cantidad: Int!
     talla: Float!
     tipo: String!
-    fechaCreacion: String!
+    fechaCreacion: String
 }
 
 input ProductInput {
@@ -21,7 +21,7 @@ input ProductInput {
 }
 
 extend type Query{
-    productByName(name: String!): Product
+    productByName(productId: String!): Product
 }
 
 extend type Mutation{
